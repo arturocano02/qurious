@@ -14,7 +14,7 @@ async function main() {
     correct_answer: decodeURIComponent(q.correct_answer),
     incorrect_answers: q.incorrect_answers.map((a: string) => decodeURIComponent(a)),
     difficulty: q.difficulty,
-    fact: decodeURIComponent(q.question).slice(0, 120)
+    fact: `Correct answer: ${decodeURIComponent(q.correct_answer)}`
   }));
   const hardIdx = questions.findIndex(q => q.difficulty === 'hard');
   if (hardIdx > 0) {
