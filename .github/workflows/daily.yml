@@ -1,0 +1,22 @@
+name: Fetch daily trivia
+on:
+  schedule:
+    - cron: '55 23 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm install
+      - run: npm run fetch:daily
+      - run: |
+          git config user.name 'github-actions'
+          git config user.email 'actions@github.com'
+          git add public/daily/*.json
+          git commit -m "chore: update daily trivia" || echo "No changes"
+          git push
