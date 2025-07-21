@@ -9,10 +9,6 @@ const ResultToast: React.FC = () => {
   return (
     <div className="fixed inset-0 flex items-center justify-center">
       {perfect && <Confetti numberOfPieces={200} recycle={false} />}
-      <div className="bg-white p-6 rounded-xl shadow-lg">
-        <p className="text-lg font-semibold text-center">
-          You scored {state.score}/5!
-        </p>
       </div>
     </div>
   );

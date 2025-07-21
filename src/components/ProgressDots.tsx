@@ -8,8 +8,6 @@ const ProgressDots: React.FC = () => {
       {state.questions.map((_, idx) => (
         <div
           key={idx}
-          className={`w-4 h-4 rounded-full ${
-            idx < state.current ? 'bg-accent' : 'bg-gray-300'
           }`}
         />
       ))}
