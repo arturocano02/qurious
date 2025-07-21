@@ -7,7 +7,6 @@ const format = (data: any): Question[] =>
     correct_answer: decodeURIComponent(q.correct_answer),
     incorrect_answers: q.incorrect_answers.map((a: string) => decodeURIComponent(a)),
     difficulty: q.difficulty,
-    fact: decodeURIComponent(q.question).slice(0, 120)
   }));
 
 export const fetchQuestions = async (): Promise<Question[]> => {

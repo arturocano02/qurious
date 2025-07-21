@@ -25,7 +25,6 @@ const QuestionCard: React.FC<{ question: Question }> = ({ question }) => {
 
   return (
     <motion.div
-      className="bg-white p-6 rounded shadow max-w-xl mx-auto relative"
       initial={{ rotateY: 0 }}
       animate={{ rotateY: chosen ? 180 : 0 }}
       transition={{ duration: 0.6 }}
@@ -38,7 +37,6 @@ const QuestionCard: React.FC<{ question: Question }> = ({ question }) => {
             <button
               key={opt}
               onClick={() => handle(opt)}
-              className={`border rounded p-2 text-left ${
                 chosen
                   ? opt === question.correct_answer
                     ? 'bg-green-200'
@@ -53,9 +51,6 @@ const QuestionCard: React.FC<{ question: Question }> = ({ question }) => {
         </div>
       </div>
       {chosen && (
-        <div className="absolute inset-0 flex flex-col justify-center items-center" style={{ transform: 'rotateY(180deg)' }}>
-          <p className="text-2xl mb-4">{correct ? '✅' : '❌'}</p>
-          <p className="text-center text-sm">{question.fact}</p>
         </div>
       )}
     </motion.div>
